@@ -1,0 +1,33 @@
+{
+  "canisters": {
+    "voting_app_backend": {
+      "main": "src/voting_app_backend/main.mo",
+      "type": "motoko"
+    },
+    "voting_app_frontend": {
+      "dependencies": [
+        "voting_app_backend"
+      ],
+      "source": [
+        "src/voting_app_frontend/dist"
+      ],
+      "type": "assets",
+      "workspace": "voting_app_frontend"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+
+  "networks": {
+    "local": {
+      "bind": "127.0.0.1:8000",
+      "type": "ephemeral"
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}
